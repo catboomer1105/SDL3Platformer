@@ -9,7 +9,6 @@ namespace engine::core {
 Time::Time() {
 	last_time = SDL_GetTicksNS();
 	frame_start_time = last_time;
-	spdlog::trace("Time system initialized. Last time: {}", last_time);
 }
 
 void Time::update() {

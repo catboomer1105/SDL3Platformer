@@ -5,6 +5,10 @@
 struct SDL_Window;
 struct SDL_Renderer;
 
+namespace engine::resource {
+	class ResourceManager;
+}
+
 
 namespace engine::core {
 
@@ -19,6 +23,7 @@ private:
 
     //Engine Components
     std::unique_ptr<engine::core::Time> time;
+	std::unique_ptr<engine::resource::ResourceManager> resource_manager;
 
 public:
 	GameApp();
@@ -37,5 +42,14 @@ private:
 	void update(float deltaTime);
 	void render();
 	void cleanup();
+
+
+	// Engine Component Initialization
+	bool initSDL();
+	bool initTime();
+	bool initResourceManager();
+
+	//Test functions
+	void testResourceManager();
 };
 } // namespace engine::core
