@@ -39,3 +39,13 @@
 
 # debug information files
 *.dwo
+
+# Xmake cache
+.xmake/
+build/
+
+# MacOS Cache
+.DS_Store
+
+# VsCode Cache
+.vscode/
