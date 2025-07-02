@@ -1,9 +1,14 @@
 #pragma once
 
+#include <memory>
+
 struct SDL_Window;
 struct SDL_Renderer;
 
+
 namespace engine::core {
+
+class Time;
 
 class GameApp final {
 
@@ -11,6 +16,9 @@ private:
     SDL_Window *window;
 	SDL_Renderer *renderer;
     bool is_running = false;
+
+    //Engine Components
+    std::unique_ptr<engine::core::Time> time;
 
 public:
 	GameApp();
